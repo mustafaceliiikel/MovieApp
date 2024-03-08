@@ -1,0 +1,24 @@
+<div class="w-3/5">
+  <div class="flex flex-row">
+    <div class="col-span-12">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="bg-white"
+          placeholder="Search films"
+          aria-label="Recipient's username"
+          #searchText
+          (keyup)="search(searchText.value)"
+        />
+        <div class="flex items-center">
+          <button
+            class="bg-red-500 text-white px-4 py-2 rounded-l-md"
+            id="basic-addon2"
+          >
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

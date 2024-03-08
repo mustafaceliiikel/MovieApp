@@ -1,0 +1,14 @@
+<div class="container mx-auto bg-[#878f9a4d] mt-4 border border-solid p-4 ">
+    <div class="flex flex-row">
+        <div class="w-full md:w-1/4 p-4 *ngFor="let film of DataService.filmsList"">
+            <a class="h-full flex flex-col" routerLink="/details/{{film.id}}">
+                <div>
+                    <img class="border-2 border-black border-solid rounded-tl-5 rounded-tr-5" src="https://image.tmdb.org/t/p/original//{{ film.poster_path }} alt="">
+                </div>
+                <div class="flex justify-center text-lg text-center bg-[#242A32] border border-solid border-black text-white h-full hover:text- ">
+                    <p>{{ film.title }}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

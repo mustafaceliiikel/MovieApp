@@ -1,0 +1,30 @@
+<div class="mx-auto max-w-screen-xl bg-[#242A32] mt-4 border border-solid p-6">
+  <div class="flex flex-wrap">
+    <div class="md:w-1/4 p-4" *NgFor="let film of filmList">
+      <a
+        class="no-underline h-full flex flex-col"
+        router-link="/details/{film.id}"
+      >
+        <div>
+          <img
+            class=""
+            src="https://image.tmdb.org/t/p/original//{{ film.poster_path }}"
+            alt=""
+          />
+        </div>
+        <div
+          class="flex items-center justify-center text-lg text-center bg-gray-800 border border-black rounded-b-lg py-2 text-white hover:text-yellow-500"
+        >
+          <p>{{ film.title }}</p>
+        </div>
+      </a>
+      <button
+        type="button"
+        class="bg-red-500 text-white w-full py-2 rounded"
+        (click)="deleteFilmFromWatchList(film)"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

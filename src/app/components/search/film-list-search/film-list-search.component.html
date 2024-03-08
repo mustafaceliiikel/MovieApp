@@ -1,0 +1,36 @@
+<div class="container p-4">
+  <div class="flex flex-row">
+    <div
+      class="md:w-1/4 p-3 rounded-md"
+      *ngFor="let film of filmService.filteredFilmList"
+    >
+      <div class="flex flex-row">
+        <div class="w-1/2">
+          <a routerLink="/detail/{{ film.id }}"
+            ><img
+              src="https://image.tmdb.org/t/p/original//{{ film.poster_path }}"
+              alt=""
+              width="100%"
+          /></a>
+        </div>
+        <div class="w-1/2">
+          <div
+            class="border-2 border-[#546e7a] bg-blue-900 rounded-md p-4 text-white h-full"
+          >
+            <h6>{{ film.title }}</h6>
+            <span style="color: #ff8700"
+              ><i class="fa fa-star" aria-hidden="true"></i>
+              {{ film.vote_average }}</span
+            >
+            <br />
+            <i class="fa fa-server" aria-hidden="true"></i> Action
+            <br />
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2019
+            <br />
+            <i class="fas fa-stopwatch"></i> 139 Min.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!-- SLIDER  -->
+<div class="w-3/5 bg-[#242A32] rounded-md p-10 border border-black">
+  <splide
+    [options]="{
+      type: 'loop',
+      perPage: 3,
+      keyboard: false,
+      autoplay: true,
+      interval: 2500,
+      drag: false
+    }"
+  >
+    <splide-slide *ngFor="let film of dataService.topTenFilmList">
+      <div class="m-2">
+        <a routerLink="/details/{{ film.id }}"
+          ><img
+            class="border border-black w-full object-cover"
+            src="https://image.tmdb.org/t/p/original//{{ film.poster_path }}"
+        /></a>
+        <span
+          class="border border-blue-500 bg-slate-200 flex justify-center items-center w-8 h-8 absolute bottom-3 left-4 text-2xl font-semibold text-orange-500"
+          >{{ dataService.topTenFilmList.indexOf(film) + 1 }}</span
+        >
+      </div>
+    </splide-slide>
+  </splide>
+</div>
